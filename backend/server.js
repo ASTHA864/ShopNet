@@ -6,6 +6,7 @@ const multer = require('multer');
 const connectDB = require('./src/config/db');
 const authRoutes = require('./src/routes/authRoutes')
 const productRoutes= require('./src/routes/productRoutes')
+const orderRoutes = require('./src/routes/orderRoutes')
 const PORT = process.env.PORT || 3000;
 
 connectDB();
@@ -19,7 +20,7 @@ app.use('/api/auth',authRoutes)
 // Product Route
 app.use('/api/products',productRoutes)
 // Order Route
-// app.use("/api/orders",ordersRoutes);
+app.use('/api/orders',orderRoutes)
 // Payment Route
 // app.use("/api/payment", paymentRoutes);
 // Analytics Route
